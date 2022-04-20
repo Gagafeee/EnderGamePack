@@ -1,0 +1,3 @@
+execute positioned ~ ~1.5 ~ as @a[scores={sneakTime=5..,Location=4},distance=..1,gamemode=!spectator] at @s if score @s QMTimer = zero number run function quickmine:liftdown
+execute positioned ~ ~1.5 ~ as @a[scores={jump=1..,Location=4},distance=..1,gamemode=!spectator] at @s if score @s QMTimer = zero number run function quickmine:liftup
+execute positioned ~ ~1.5 ~ as @a[distance=1.2..5] run function quickmine:resetliftscores

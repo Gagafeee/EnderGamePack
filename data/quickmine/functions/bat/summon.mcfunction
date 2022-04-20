@@ -1,0 +1,10 @@
+summon area_effect_cloud ~ ~1 ~ {Tags:["QuickMineGenerateRandomBatRarity"],Age:1}
+execute store result score rarity QMBatModule run data get entity @e[type=area_effect_cloud,tag=QuickMineGenerateRandomBatRarity,limit=1] UUID[0]
+scoreboard players operation rarity QMBatModule %= raritymax QMBatModule
+kill @e[type=area_effect_cloud,tag=QuickMineGenerateRandomBatRarity]
+
+execute at @s if score rarity QMBatModule matches 0..5000 run summon bat ~ ~ ~ {CustomName:'["",{"text":"[","color":"dark_aqua"},{"text":"Common Bat","color":"aqua"},{"text":"]","color":"dark_aqua"}]',CustomNameVisible:1,PersistenceRequired:1b,CanPickUpLoot:0b,Health:1,Attributes:[{Name:"generic.max_health",Base:1}],Tags:["QMBat","1"]}
+execute at @s if score rarity QMBatModule matches 5000..7000 run summon bat ~ ~ ~ {CustomName:'["",{"text":"[","color":"dark_green"},{"text":"Uncommon Bat","color":"green"},{"text":"]","color":"dark_green"}]',CustomNameVisible:1,PersistenceRequired:1b,CanPickUpLoot:0b,Health:1,Attributes:[{Name:"generic.max_health",Base:1}],Tags:["QMBat","2"]}
+execute at @s if score rarity QMBatModule matches 7000..8500 run summon bat ~ ~ ~ {CustomName:'["",{"text":"[","color":"gold"},{"text":"Rare Bat","color":"yellow"},{"text":"]","color":"gold"}]',CustomNameVisible:1,PersistenceRequired:1b,CanPickUpLoot:0b,Health:1,Attributes:[{Name:"generic.max_health",Base:1}],Tags:["QMBat","3"]}
+execute at @s if score rarity QMBatModule matches 8500..9500 run summon bat ~ ~ ~ {CustomName:'["",{"text":"[","color":"dark_purple"},{"text":"Epic Bat","color":"light_purple"},{"text":"]","color":"dark_purple"}]',CustomNameVisible:1,PersistenceRequired:1b,CanPickUpLoot:0b,Health:1,Attributes:[{Name:"generic.max_health",Base:1}],Tags:["QMBat","4"]}
+execute at @s if score rarity QMBatModule matches 9500..10000 run summon bat ~ ~ ~ {CustomName:'["",{"text":"[","color":"gold"},{"text":"AA","obfuscated":true,"color":"gold"},{"text":" Legendary Bat ","color":"gold"},{"text":"AA","obfuscated":true,"color":"gold"},{"text":"]","color":"gold"}]',CustomNameVisible:1,PersistenceRequired:1b,CanPickUpLoot:0b,Health:1,Attributes:[{Name:"generic.max_health",Base:1}],Tags:["QMBat","5"]}

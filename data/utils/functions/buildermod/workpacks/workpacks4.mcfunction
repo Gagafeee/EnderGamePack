@@ -1,0 +1,17 @@
+item replace entity @s container.0 with white_concrete
+item replace entity @s container.1 with pink_concrete
+item replace entity @s container.2 with magenta_concrete
+item replace entity @s container.3 with red_concrete
+item replace entity @s container.4 with yellow_concrete
+item replace entity @s container.5 with light_blue_concrete
+item replace entity @s container.6 with green_concrete
+item replace entity @s container.7 with brown_concrete
+item replace entity @s container.8 with gray_concrete
+item replace entity @s container.9 with black_concrete
+item replace entity @s container.10 with ladder
+item replace entity @s container.11 with string
+item replace entity @s container.12 with acacia_fence
+item replace entity @s container.13 with shroomlight
+item replace entity @s container.14 with bell
+item replace entity @s container.15 with nether_brick_fence
+item replace entity @s container.16 with end_rod

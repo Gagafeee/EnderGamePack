@@ -1,0 +1,29 @@
+map #0 [test]
+    blue_concrete
+    green_concrete
+    yellow_concrete
+    gray_concrete
+map #1
+    orange_terracotta
+    sandstone_stairs
+    gold_block
+    blue_terracotta
+map #2
+
+
+
+
+map #3
+
+
+
+
+map #4
+
+
+
+
+map #5
+
+
+

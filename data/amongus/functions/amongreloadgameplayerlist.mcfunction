@@ -1,0 +1,1 @@
+execute as @r[tag=!Among1,scores={Location=2}] if entity @s run function amongus:amongreloadgameplayerlistadd

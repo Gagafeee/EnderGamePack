@@ -1,0 +1,2 @@
+execute as @a[scores={Location=3},tag=finder] if score Time prophuntmodul = deux number if score try prophuntbloctype = zero number if score founded prophuntbloctype < block prophuntbloctype run function prophunt:issue/lose
+execute as @a[scores={Location=3},tag=finder] if score Time prophuntmodul = deux number if score founded prophuntbloctype = block prophuntbloctype run function prophunt:issue/win

@@ -1,0 +1,6 @@
+xp add @s 5 levels
+scoreboard players add @s QMScore 5
+stopsound @s
+playsound entity.experience_orb.pickup master @s ~ ~ ~ 100 2
+scoreboard players add @s QMSIron 1
+scoreboard players set @s QMIronTrigger 0

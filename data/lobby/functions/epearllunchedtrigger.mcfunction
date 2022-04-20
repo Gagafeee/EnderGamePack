@@ -1,0 +1,3 @@
+execute as @a[scores={epearllunch=1..9}] if entity @s run function utils:setitems
+execute as @a[scores={epearllunch=1..9}] if entity @s run tellraw @s ["",{"text":"[","color":"dark_red"},{"text":" Please drop item to use it press","color":"red"},{"text":" ","color":"gold"},{"keybind":"key.drop","color":"gold"},{"text":" ]","color":"dark_red"}]
+execute as @a[scores={epearllunch=1..9}] if entity @s run scoreboard players set @s epearllunch 0
