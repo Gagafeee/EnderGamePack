@@ -82,6 +82,13 @@ scoreboard objectives add JSTSecond dummy
 #scoreboard objectives add ATask dummy
 ##PropHunt
 scoreboard objectives add PropHuntTrigger dummy
+scoreboard objectives add PHModule dummy
+scoreboard objectives add PHIsInGame dummy
+#timer
+scoreboard objectives add PHTimerManager dummy
+    scoreboard players set StartTimer PHTimerManager 0
+scoreboard objectives add PHTStart dummy
+    scoreboard players set Second PHTStart 30
 #scoreboard objectives add prophuntmodul dummy
 #    scoreboard players set Started prophuntmodul 0
 #    scoreboard players set selectedmap prophuntmodul 0

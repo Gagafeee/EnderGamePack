@@ -21,24 +21,24 @@ scoreboard players set @a[scores={SelectGameUI=2}] SelectGameUI 0
     ##playergeter
     function jump:jumpreloadgameplayerlist
 #AmongUS
-    ##clear color index
-    scoreboard players reset @s AmongColorIndex
-    ##reset number
-    execute as @s if entity @s run scoreboard players set AmongUS GamePlayerNumber 0
-    execute as @s if entity @s run tag @a[tag=Among1] remove Among1
-    execute as @s if entity @s run scoreboard players reset @s ATask
-    ##set tag
-    tag @s remove Among1
-    ##set team
-    team join Player @s
-    ##set scores
-    scoreboard players set Imposteur AmongImposteur 0
-    scoreboard players set Crewmate AmongImposteur 0
-    scoreboard players set DiePlayer AmongImposteur 0
-    scoreboard players reset @a[scores={Location=2}] AmongImposteur
+    ###clear color index
+    #scoreboard players reset @s AmongColorIndex
+    ###reset number
+    #execute as @s if entity @s run scoreboard players set AmongUS GamePlayerNumber 0
+    #execute as @s if entity @s run tag @a[tag=Among1] remove Among1
+    #execute as @s if entity @s run scoreboard players reset @s ATask
+    ###set tag
+    #tag @s remove Among1
+    ###set team
+    #team join Player @s
+    ###set scores
+    #scoreboard players set Imposteur AmongImposteur 0
+    #scoreboard players set Crewmate AmongImposteur 0
+    #scoreboard players set DiePlayer AmongImposteur 0
+    #scoreboard players reset @a[scores={Location=2}] AmongImposteur
 #PropHunt
+    scoreboard players reset @s PHIsInGame
     function prophunt:reloadgameplayerlist
-    scoreboard players reset @s prophuntbloctype
 #QuickMine
     scoreboard players reset @s QMCopperTrigger
     scoreboard players reset @s QMIronTrigger

@@ -23,3 +23,8 @@
 #
 #execute as @a[scores={Location=3},tag=finder] if score @s prophuntclick >= un number if score @s prophuntkill = un number run function prophunt:find
 #execute as @a[scores={Location=3},tag=finder] if score @s prophuntclick >= un number if score @s prophuntkill = zero number run function prophunt:notfind
+
+execute as @a[scores={Location=3,PHIsInGame=0}] if score PropHunt GamePlayerNumber = un number run title @s actionbar ["",{"text":"Waiting players... ","color":"red"},{"score":{"name":"PropHunt","objective":"GamePlayerNumber"},"color":"red"},{"text":"/","color":"red"},{"text":"5","color":"dark_red"}]
+execute as @a[scores={Location=3,PHIsInGame=0}] if score PropHunt GamePlayerNumber > un number run title @s actionbar ["",{"text":"Starting game...","color":"green"},{"text":" "},{"score":{"name":"Second","objective":"PHTStart"},"color":"gold"},{"text":"s","color":"yellow"},{"text":" "},{"score":{"name":"PropHunt","objective":"GamePlayerNumber"},"color":"aqua"},{"text":"/5","color":"dark_aqua"}]
+
+execute if score PropHunt GamePlayerNumber >= deux number run scoreboard players set Start PHTimerManager 1
