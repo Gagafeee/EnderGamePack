@@ -45,6 +45,7 @@ execute as @s if entity @s[tag=!admin] run team leave @s
     #scoreboard players reset @a[scores={Location=2}] AmongImposteur
 #PropHunt
     scoreboard players reset @s PHIsInGame
+    scoreboard players reset @s PHTry
     function prophunt:reloadgameplayerlist
 #QuickMine
     scoreboard players reset @s QMCopperTrigger

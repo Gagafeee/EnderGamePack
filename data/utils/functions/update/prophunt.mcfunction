@@ -23,6 +23,7 @@
 #
 #execute as @a[scores={Location=3},tag=finder] if score @s prophuntclick >= un number if score @s prophuntkill = un number run function prophunt:find
 #execute as @a[scores={Location=3},tag=finder] if score @s prophuntclick >= un number if score @s prophuntkill = zero number run function prophunt:notfind
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=!finder] run function prophunt:map/0/updateblock 
 
 execute as @a[scores={Location=3,PHIsInGame=0}] if score PHSpawn GamePlayerNumber = un number run title @s actionbar ["",{"text":"Waiting players... ","color":"red"},{"score":{"name":"PHSpawn","objective":"GamePlayerNumber"},"color":"red"},{"text":"/","color":"red"},{"text":"5","color":"dark_red"}]
 execute as @a[scores={Location=3,PHIsInGame=0}] if score PHSpawn GamePlayerNumber > un number run title @s actionbar ["",{"text":"Starting game...","color":"green"},{"text":" "},{"score":{"name":"Second","objective":"PHTStart"},"color":"gold"},{"text":"s","color":"yellow"},{"text":" "},{"score":{"name":"PropHunt","objective":"GamePlayerNumber"},"color":"aqua"},{"text":"/5","color":"dark_aqua"}]
@@ -35,7 +36,11 @@ execute if score PHSpawn GamePlayerNumber < deux number if score Start PHTimerMa
 execute if score PHSpawn GamePlayerNumber < deux number if score Start PHTimerManager = un number run scoreboard players set Start PHTimerManager 0
 execute if score PHSpawn GamePlayerNumber < deux number if score Start PHTimerManager = zero number run scoreboard players set Second PHTStart 60
 
+execute if score ForestGame PHTimerManager = un number store result bossbar minecraft:ph_forest value run scoreboard players get Forest PHFounded
 
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder] if score @s PHClick > zero number if score @s PHtarget = zero number run function prophunt:map/0/notfind
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHtarget 0
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHClick 0
 execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
 execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
 execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
@@ -45,3 +50,5 @@ execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in p
 execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] run gamemode spectator @s
 execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] if score ForestWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Waiting for hiding... ","color":"yellow"},{"score":{"name":"Waiting","objective":"PHTForest"},"color":"aqua"},{"text":"s","color":"gold"}]
 execute as @a[scores={Location=3,PHIsInGame=1},tag=!finderwaiting] if score ForestWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Hide yourself !  ","color":"gold"},{"score":{"name":"Waiting","objective":"PHTForest"},"color":"red"},{"text":"s","color":"gold"}]
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder] if score ForestGame PHTimerManager = un number run title @s actionbar ["",{"text":"Researcher","color":"gold"},{"text":" |","color":"gray"},{"text":" "},{"score":{"name":"Game","objective":"PHTForest"},"color":"aqua"},{"text":"s","color":"yellow"},{"text":" | ","color":"gray"},{"score":{"name":"@s","objective":"PHTry"},"color":"aqua"},{"text":" Try left","color":"yellow"}]
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=!finder] if score ForestGame PHTimerManager = un number run title @s actionbar ["",{"text":"Block","color":"green"},{"text":" |","color":"gray"},{"text":" "},{"score":{"name":"Game","objective":"PHTForest"},"color":"aqua"},{"text":"s","color":"yellow"},{"text":" | ","color":"gray"},{"score":{"name":"@s","objective":"PHTry"},"color":"aqua"},{"text":" Try left","color":"yellow"}]

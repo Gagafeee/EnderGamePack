@@ -90,6 +90,7 @@ scoreboard objectives add PHTimerManager dummy
     scoreboard players set Start PHTimerManager 0
     scoreboard players set ForestWaiting PHTimerManager 0
     scoreboard players set ForestGame PHTimerManager 0
+    
 scoreboard objectives add PHTStart dummy
     scoreboard players set Second PHTStart 30
 scoreboard objectives add PHMaps dummy
@@ -101,6 +102,12 @@ scoreboard objectives add PHMaps dummy
     scoreboard players set 5 PHMaps 1
 scoreboard objectives add PHTForest dummy
     scoreboard players set Waiting PHTForest 0
+    scoreboard players set Game PHTForest 0
+scoreboard objectives add PHTry dummy
+scoreboard objectives add PHtarger dummy
+scoreboard objectives add PHFounded dummy
+    scoreboard players set Forest PHFounded 0
+bossbar add ph_forest {"text":"Founded X player"}
 #scoreboard objectives add prophuntmodul dummy
 #    scoreboard players set Started prophuntmodul 0
 #    scoreboard players set selectedmap prophuntmodul 0
