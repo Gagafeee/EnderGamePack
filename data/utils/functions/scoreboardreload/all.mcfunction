@@ -20,6 +20,7 @@ scoreboard objectives add GamePlayerNumber dummy
     scoreboard players set Jump GamePlayerNumber 0
     scoreboard players set AmongUS GamePlayerNumber 0
     scoreboard players set PropHunt GamePlayerNumber 0
+    scoreboard players set PHSpawn GamePlayerNumber 0
     scoreboard players set QuickMine GamePlayerNumber 0
 scoreboard objectives add GameStats dummy
     scoreboard players set Jump GameStats 0
@@ -86,9 +87,20 @@ scoreboard objectives add PHModule dummy
 scoreboard objectives add PHIsInGame dummy
 #timer
 scoreboard objectives add PHTimerManager dummy
-    scoreboard players set StartTimer PHTimerManager 0
+    scoreboard players set Start PHTimerManager 0
+    scoreboard players set ForestWaiting PHTimerManager 0
+    scoreboard players set ForestGame PHTimerManager 0
 scoreboard objectives add PHTStart dummy
     scoreboard players set Second PHTStart 30
+scoreboard objectives add PHMaps dummy
+    scoreboard players set 0 PHMaps 0
+    scoreboard players set 1 PHMaps 1
+    scoreboard players set 2 PHMaps 1
+    scoreboard players set 3 PHMaps 1
+    scoreboard players set 4 PHMaps 1
+    scoreboard players set 5 PHMaps 1
+scoreboard objectives add PHTForest dummy
+    scoreboard players set Waiting PHTForest 0
 #scoreboard objectives add prophuntmodul dummy
 #    scoreboard players set Started prophuntmodul 0
 #    scoreboard players set selectedmap prophuntmodul 0

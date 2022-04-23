@@ -3,12 +3,19 @@ execute in spawn run tp @s -262 172 73 10 -2.6
 ##sound + title
 execute at @s run playsound minecraft:entity.ender_eye.death master @s
 title @s actionbar {"text":"Spawn","bold":true,"color":"#FF5F00"}
+##set location
+scoreboard players set @s Location 0
 ##reset selectgameui
-scoreboard players set @a[scores={SelectGameUI=2}] SelectGameUIQuit 0
-scoreboard players set @a[scores={SelectGameUI=2}] SelectGameUI 0
+#scoreboard players set @a[scores={SelectGameUI=2}] SelectGameUIQuit 0
+#scoreboard players set @a[scores={SelectGameUI=2}] SelectGameUI 0
 ##Bases
     effect clear @s
-    
+
+##set items
+execute as @s run function lobby:reloaditems
+##set team
+execute as @s if entity @s[tag=admin] run team join admin
+execute as @s if entity @s[tag=!admin] run team leave @s
 ##Jump
     ##reset progress
     scoreboard players set @s JumpCheckpoint 0
@@ -56,13 +63,6 @@ scoreboard players set @a[scores={SelectGameUI=2}] SelectGameUI 0
     scoreboard players set @s QMZone 0
     scoreboard players set @s QMLift 0
     scoreboard players set @s sneakTime 0
-##set items
-execute as @s run function lobby:reloaditems
-##set location
-scoreboard players set @s Location 0
-##set team
-execute as @s if entity @s[tag=admin] run team join admin
-execute as @s if entity @s[tag=!admin] run team leave @s
 ##reset score
 scoreboard players set @s EmeraldTrigger 0
 
