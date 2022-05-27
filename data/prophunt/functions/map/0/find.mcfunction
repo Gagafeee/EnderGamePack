@@ -1,7 +1,11 @@
-title @s times 20 20 20
-title @s subtitle ["",{"text":"Vous avez trouvé","color":"green"},{"text":" @p","color":"aqua"}]
-title @s title {"text":"Trouvé","color":"green"}
-scoreboard players remove @s PHTry 1
-scoreboard players add Forest PHFounded 1
-bossbar set ph_forest visible false
-bossbar set ph_forest visible true
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run title @s times 20 20 20
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run title @s subtitle ["",{"text":"Vous avez trouvé","color":"green"},{"text":" @p","color":"aqua"}]
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run title @s title {"text":"Trouvé","color":"green"}
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run scoreboard players remove @s PHTry 1
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run scoreboard players add Forest PHFounded 1
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run bossbar set ph_forest visible false
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run bossbar set minecraft:ph_forest name ["",{"score":{"name":"Forest","objective":"PHFounded"},"color":"aqua"},{"text":" Joueurs ont été trouvés","color":"red"}]
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run bossbar set ph_forest visible true
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run execute at @s as @p[gamemode=!spectator,tag=!finder] run function prophunt:map/0/founded
+#get if finder has founded all player
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run execute if score Forest PHFounded = ForestMax PHFounded run function prophunt:map/0/issue/finderwin

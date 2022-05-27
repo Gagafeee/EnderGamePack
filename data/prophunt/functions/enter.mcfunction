@@ -14,6 +14,8 @@ effect clear @s speed
 
 ##Reset inventory
 function prophunt:setitems
+#message
+tellraw @a[scores={Location=3,PHIsInGame=0}] ["",{"text":"[","color":"dark_green"},{"text":"+","color":"green"},{"text":"] ","color":"dark_green"},{"selector":"@s","color":"aqua"},{"text":" a rejoint le Lobby","color":"green"}]
 ##Reset deplacement
 scoreboard players set @s PropHuntTrigger 0
 scoreboard players set @s Deplacement 0

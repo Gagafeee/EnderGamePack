@@ -19,6 +19,7 @@ scoreboard players set ForestOperation PHFounded 0
 execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=!finder] run scoreboard players add ForestOperation PHFounded 1
 execute store result bossbar minecraft:ph_forest max run scoreboard players get ForestOperation PHFounded
 scoreboard players reset ForestOperation PHFounded
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=!finder] run scoreboard players add ForestMax PHFounded 1
 
 #start waiting timer
 scoreboard players set ForestWaiting PHTimerManager 1

@@ -2,7 +2,7 @@
 execute in spawn run tp @s -262 172 73 10 -2.6
 ##sound + title
 execute at @s run playsound minecraft:entity.ender_eye.death master @s
-title @s actionbar {"text":"Spawn","bold":true,"color":"#FF5F00"}
+title @s actionbar {"text":"Lobby","bold":true,"color":"#FF5F00"}
 ##set location
 scoreboard players set @s Location 0
 ##reset selectgameui
@@ -44,9 +44,13 @@ execute as @s if entity @s[tag=!admin] run team leave @s
     #scoreboard players set DiePlayer AmongImposteur 0
     #scoreboard players reset @a[scores={Location=2}] AmongImposteur
 #PropHunt
-    scoreboard players reset @s PHIsInGame
-    scoreboard players reset @s PHTry
+    execute as @s if entity @s[scores={PHIsInGame=0}] run tellraw @a[scores={Location=3,PHIsInGame=0}] ["",{"text":"[","color":"dark_red"},{"text":"-","color":"red"},{"text":"] ","color":"dark_red"},{"selector":"@s","color":"aqua"},{"text":" a quitté le Lobby","color":"red"}]
+    execute as @s if entity @s[scores={PHIsInGame=1}] run tellraw @a[scores={Location=3,PHIsInGame=1}] ["",{"text":"[","color":"dark_red"},{"text":"-","color":"red"},{"text":"] ","color":"dark_red"},{"selector":"@s","color":"aqua"},{"text":" a quitté la partie","color":"red"}]
+    #crash game
+    execute as @s[tag=PHG.0] run function prophunt:map/0/resetplayer
+    execute as @s[tag=PHG.0] run function prophunt:map/0/issue/playerleave
     function prophunt:reloadgameplayerlist
+    
 #QuickMine
     scoreboard players reset @s QMCopperTrigger
     scoreboard players reset @s QMIronTrigger

@@ -21,6 +21,7 @@ scoreboard objectives add GamePlayerNumber dummy
     scoreboard players set AmongUS GamePlayerNumber 0
     scoreboard players set PropHunt GamePlayerNumber 0
     scoreboard players set PHSpawn GamePlayerNumber 0
+    scoreboard players set PhForest GamePlayerNumber 0
     scoreboard players set QuickMine GamePlayerNumber 0
 scoreboard objectives add GameStats dummy
     scoreboard players set Jump GameStats 0

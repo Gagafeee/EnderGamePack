@@ -1,4 +1,4 @@
-title @s times 20 20 20
-title @s subtitle {"text":"It's a normal block","color":"red"}
-title @s title {"text":"Nop","color":"dark_red"}
-scoreboard players remove @s PHTry 1
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run title @s times 20 20 20
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run title @s subtitle {"text":"It's a normal block","color":"red"}
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run title @s title {"text":"Nop","color":"dark_red"}
+execute if score Game PHTForest > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry > zero number run scoreboard players remove @s PHTry 1
