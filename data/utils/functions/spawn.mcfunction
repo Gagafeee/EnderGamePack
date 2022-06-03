@@ -47,8 +47,18 @@ execute as @s if entity @s[tag=!admin] run team leave @s
     execute as @s if entity @s[scores={PHIsInGame=0}] run tellraw @a[scores={Location=3,PHIsInGame=0}] ["",{"text":"[","color":"dark_red"},{"text":"-","color":"red"},{"text":"] ","color":"dark_red"},{"selector":"@s","color":"aqua"},{"text":" a quitté le Lobby","color":"red"}]
     execute as @s if entity @s[scores={PHIsInGame=1}] run tellraw @a[scores={Location=3,PHIsInGame=1}] ["",{"text":"[","color":"dark_red"},{"text":"-","color":"red"},{"text":"] ","color":"dark_red"},{"selector":"@s","color":"aqua"},{"text":" a quitté la partie","color":"red"}]
     #crash game
-    execute as @s[tag=PHG.0] run function prophunt:map/0/resetplayer
     execute as @s[tag=PHG.0] run function prophunt:map/0/issue/playerleave
+    execute as @s[tag=PHG.0] run function prophunt:map/0/resetplayer
+    execute as @s[tag=PHG.1] run function prophunt:map/1/issue/playerleave
+    execute as @s[tag=PHG.1] run function prophunt:map/1/resetplayer
+    execute as @s[tag=PHG.2] run function prophunt:map/2/issue/playerleave
+    execute as @s[tag=PHG.2] run function prophunt:map/2/resetplayer
+    execute as @s[tag=PHG.3] run function prophunt:map/3/issue/playerleave
+    execute as @s[tag=PHG.3] run function prophunt:map/3/resetpslayer
+    execute as @s[tag=PHG.4] run function prophunt:map/4/issue/playerleave
+    execute as @s[tag=PHG.4] run function prophunt:map/4/resetplayer
+    execute as @s[tag=PHG.5] run function prophunt:map/5/issue/playerleave
+    execute as @s[tag=PHG.5] run function prophunt:map/5/resetplayer
     function prophunt:reloadgameplayerlist
     
 #QuickMine

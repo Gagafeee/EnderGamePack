@@ -1,0 +1,11 @@
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run title @s times 20 20 20
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run title @s subtitle ["",{"text":"Vous avez trouvé","color":"green"},{"text":" @p","color":"aqua"}]
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run title @s title {"text":"Trouvé","color":"green"}
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run scoreboard players remove @s PHTry 1
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run scoreboard players add Temple PHFounded 1
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run bossbar set ph_temple visible false
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run bossbar set minecraft:ph_temple name ["",{"score":{"name":"Forest","objective":"PHFounded"},"color":"aqua"},{"text":" Joueurs ont été trouvés","color":"red"}]
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run bossbar set ph_temple visible true
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry > zero number run execute at @s as @p[gamemode=!spectator,tag=!finder] run function prophunt:map/5/founded
+#get if finder has founded all player
+execute if score Game PHTTemple > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry >= zero number run execute if score Temple PHFounded = TempleMax PHFounded run function prophunt:map/5/issue/finderwin

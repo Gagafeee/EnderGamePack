@@ -96,11 +96,11 @@ scoreboard objectives add PHTStart dummy
     scoreboard players set Second PHTStart 30
 scoreboard objectives add PHMaps dummy
     scoreboard players set 0 PHMaps 0
-    scoreboard players set 1 PHMaps 1
-    scoreboard players set 2 PHMaps 1
-    scoreboard players set 3 PHMaps 1
-    scoreboard players set 4 PHMaps 1
-    scoreboard players set 5 PHMaps 1
+    scoreboard players set 1 PHMaps 0
+    scoreboard players set 2 PHMaps 0
+    scoreboard players set 3 PHMaps 0
+    scoreboard players set 4 PHMaps 0
+    scoreboard players set 5 PHMaps 0
 scoreboard objectives add PHTForest dummy
     scoreboard players set Waiting PHTForest 0
     scoreboard players set Game PHTForest 0
@@ -108,7 +108,8 @@ scoreboard objectives add PHTry dummy
 scoreboard objectives add PHtarger dummy
 scoreboard objectives add PHFounded dummy
     scoreboard players set Forest PHFounded 0
-bossbar add ph_forest {"text":"Founded X player"}
+bossbar add ph_forest ["",{"score":{"name":"Forest","objective":"PHFounded"},"color":"yellow"},{"text":" Joueur ont été trouvé","color":"aqua"}]
+bossbar add ph_ocean ["",{"score":{"name":"Ocean","objective":"PHFounded"},"color":"yellow"},{"text":" Joueur ont été trouvé","color":"aqua"}]
 #scoreboard objectives add prophuntmodul dummy
 #    scoreboard players set Started prophuntmodul 0
 #    scoreboard players set selectedmap prophuntmodul 0

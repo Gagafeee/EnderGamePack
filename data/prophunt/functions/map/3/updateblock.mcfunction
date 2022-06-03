@@ -1,0 +1,4 @@
+execute as @s[tag=!PHB.DISABLED,tag=PHG.3,tag=PHB.Prismarine] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:prismarine"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}
+execute as @s[tag=!PHB.DISABLED,tag=PHG.3,tag=PHB.Raw_gold_block] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:raw_gold_block"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}
+execute as @s[tag=!PHB.DISABLED,tag=PHG.3,tag=PHB.Stone] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:stone"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}
+execute as @s[tag=!PHB.DISABLED,tag=PHG.3,tag=PHB.Twisting_vine] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:twisting_vines"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}

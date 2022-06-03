@@ -24,6 +24,8 @@
 #execute as @a[scores={Location=3},tag=finder] if score @s prophuntclick >= un number if score @s prophuntkill = un number run function prophunt:find
 #execute as @a[scores={Location=3},tag=finder] if score @s prophuntclick >= un number if score @s prophuntkill = zero number run function prophunt:notfind
 execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=!finder] run function prophunt:map/0/updateblock 
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=!finder] run function prophunt:map/3/updateblock 
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=!finder] run function prophunt:map/5/updateblock
 execute if score 0 PHMaps = un number if score 1 PHMaps = un number if score 2 PHMaps = un number if score 3 PHMaps = un number if score 4 PHMaps = un number if score 5 PHMaps = un number run scoreboard players set PropHunt Games 3
 execute as @a[scores={Location=3,PHIsInGame=0}] if score PHSpawn GamePlayerNumber = un number run title @s actionbar ["",{"text":"Waiting players... ","color":"red"},{"score":{"name":"PHSpawn","objective":"GamePlayerNumber"},"color":"red"},{"text":"/","color":"red"},{"text":"5","color":"dark_red"}]
 execute as @a[scores={Location=3,PHIsInGame=0}] if score PHSpawn GamePlayerNumber > un number run title @s actionbar ["",{"text":"Starting game...","color":"green"},{"text":" "},{"score":{"name":"Second","objective":"PHTStart"},"color":"gold"},{"text":"s","color":"yellow"},{"text":" "},{"score":{"name":"PHSpawn","objective":"GamePlayerNumber"},"color":"aqua"},{"text":"/5","color":"dark_aqua"}]
@@ -42,11 +44,6 @@ execute if score PHSpawn GamePlayerNumber < deux number if score Start PHTimerMa
     execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHtarget 0
     execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHClick 0
     execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
-    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
-    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
-    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
-    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
-    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.0] in pforest run tp @s 44.6 -15.5 -134 45 -0.3
     execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] run gamemode spectator @s
     execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] if score ForestWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Waiting for hiding... ","color":"yellow"},{"score":{"name":"Waiting","objective":"PHTForest"},"color":"aqua"},{"text":"s","color":"gold"}]
     execute as @a[scores={Location=3,PHIsInGame=1},tag=!finderwaiting] if score ForestWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Hide yourself !  ","color":"gold"},{"score":{"name":"Waiting","objective":"PHTForest"},"color":"red"},{"text":"s","color":"gold"}]
@@ -55,3 +52,35 @@ execute if score PHSpawn GamePlayerNumber < deux number if score Start PHTimerMa
     #get if finder has more try
     execute if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.0,tag=finder,limit=1] PHTry = zero number if score Game PHTForest > zero number run function prophunt:map/0/issue/blockwinbytry
     execute if score ForestGame PHTimerManager = un number if score Game PHTForest = -5 number run function prophunt:map/0/stop
+
+#Ocean
+    execute if score OceanGame PHTimerManager = un number store result bossbar minecraft:ph_ocean value run scoreboard players get Ocean PHFounded
+
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder] if score @s PHClick > zero number if score @s PHtarget = zero number run function prophunt:map/3/notfind
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHtarget 0
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHClick 0
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.3] in pocean run tp @s 44.6 -15.5 -134 45 -0.3
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] run gamemode spectator @s
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] if score OceanWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Waiting for hiding... ","color":"yellow"},{"score":{"name":"Waiting","objective":"PHTOcean"},"color":"aqua"},{"text":"s","color":"gold"}]
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=!finderwaiting] if score OceanWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Hide yourself !  ","color":"gold"},{"score":{"name":"Waiting","objective":"PHTOcean"},"color":"red"},{"text":"s","color":"gold"}]
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder] if score OceanGame PHTimerManager = un number if score Game PHTOcean > un number run title @s actionbar ["",{"text":"Researcher","color":"gold"},{"text":" |","color":"gray"},{"text":" "},{"score":{"name":"Game","objective":"PHTOcean"},"color":"aqua"},{"text":"s","color":"yellow"},{"text":" | ","color":"gray"},{"score":{"name":"@s","objective":"PHTry"},"color":"aqua"},{"text":" Try left","color":"yellow"}]
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=!finder] if score OceanGame PHTimerManager = un number if score Game PHTOcean > un number run title @s actionbar ["",{"text":"Block","color":"green"},{"text":" |","color":"gray"},{"text":" "},{"score":{"name":"Game","objective":"PHTOcean"},"color":"aqua"},{"text":"s","color":"yellow"},{"text":" | ","color":"gray"},{"score":{"name":"@a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1]","objective":"PHTry"},"color":"dark_aqua"},{"text":" Try left","color":"gray"}]
+    #get if finder has more try
+    execute if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry = zero number if score Game PHTOcean > zero number run function prophunt:map/3/issue/blockwinbytry
+    execute if score OceanGame PHTimerManager = un number if score Game PHTOcean = -5 number run function prophunt:map/3/stop
+
+#Temple
+    execute if score TempleGame PHTimerManager = un number store result bossbar minecraft:ph_temple value run scoreboard players get Temple PHFounded
+
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder] if score @s PHClick > zero number if score @s PHtarget = zero number run function prophunt:map/3/notfind
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHtarget 0
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder] if score @s PHClick > zero number run scoreboard players set @s PHClick 0
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting,tag=PHG.5] in ptemple run tp @s 44.6 -15.5 -134 45 -0.3
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] run gamemode spectator @s
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=finderwaiting] if score TempleWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Waiting for hiding... ","color":"yellow"},{"score":{"name":"Waiting","objective":"PHTTemple"},"color":"aqua"},{"text":"s","color":"gold"}]
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=!finderwaiting] if score TempleWaiting PHTimerManager = un number run title @s actionbar ["",{"text":"Hide yourself !  ","color":"gold"},{"score":{"name":"Waiting","objective":"PHTTemple"},"color":"red"},{"text":"s","color":"gold"}]
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder] if score TempleGame PHTimerManager = un number if score Game PHTTemple > un number run title @s actionbar ["",{"text":"Researcher","color":"gold"},{"text":" |","color":"gray"},{"text":" "},{"score":{"name":"Game","objective":"PHTTemple"},"color":"aqua"},{"text":"s","color":"yellow"},{"text":" | ","color":"gray"},{"score":{"name":"@s","objective":"PHTry"},"color":"aqua"},{"text":" Try left","color":"yellow"}]
+    execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=!finder] if score TempleGame PHTimerManager = un number if score Game PHTTemple > un number run title @s actionbar ["",{"text":"Block","color":"green"},{"text":" |","color":"gray"},{"text":" "},{"score":{"name":"Game","objective":"PHTTemple"},"color":"aqua"},{"text":"s","color":"yellow"},{"text":" | ","color":"gray"},{"score":{"name":"@a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1]","objective":"PHTry"},"color":"dark_aqua"},{"text":" Try left","color":"gray"}]
+    #get if finder has more try
+    execute if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.5,tag=finder,limit=1] PHTry = zero number if score Game PHTTemple > zero number run function prophunt:map/5/issue/blockwinbytry
+    execute if score TempleGame PHTimerManager = un number if score Game PHTTemple = -5 number run function prophunt:map/5/stop

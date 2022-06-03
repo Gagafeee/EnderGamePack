@@ -1,0 +1,4 @@
+execute as @s[tag=!PHB.DISABLED,tag=PHG.5,tag=PHB.Orange_terracotta] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:orange_terracotta"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}
+execute as @s[tag=!PHB.DISABLED,tag=PHG.5,tag=PHB.Sandstone_stairs] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:sandstone_wall"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}
+execute as @s[tag=!PHB.DISABLED,tag=PHG.5,tag=PHB.Gold_block] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:gold_block"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}
+execute as @s[tag=!PHB.DISABLED,tag=PHG.5,tag=PHB.Blue_terracotta] at @s align xyz run summon falling_block ~0.5 ~ ~0.5 {BlockState:{Name:"minecraft:blue_terracotta"},Time:599,NoGravity:1,Marker:1b,DropItem:0b}

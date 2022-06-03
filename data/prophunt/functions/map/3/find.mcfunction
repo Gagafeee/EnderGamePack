@@ -1,0 +1,11 @@
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run title @s times 20 20 20
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run title @s subtitle ["",{"text":"Vous avez trouvé","color":"green"},{"text":" @p","color":"aqua"}]
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run title @s title {"text":"Trouvé","color":"green"}
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run scoreboard players remove @s PHTry 1
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run scoreboard players add Ocean PHFounded 1
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run bossbar set ph_ocean visible false
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run bossbar set minecraft:ph_ocean name ["",{"score":{"name":"Ocean","objective":"PHFounded"},"color":"aqua"},{"text":" Joueurs ont été trouvés","color":"red"}]
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run bossbar set ph_ocean visible true
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run execute at @s as @p[gamemode=!spectator,tag=!finder] run function prophunt:map/0/founded
+#get if finder has founded all player
+execute if score Game PHTOcean > zero number if score @a[scores={Location=3,PHIsInGame=1},tag=PHG.3,tag=finder,limit=1] PHTry > zero number run execute if score Ocean PHFounded = OceanMax PHFounded run function prophunt:map/0/issue/finderwin
