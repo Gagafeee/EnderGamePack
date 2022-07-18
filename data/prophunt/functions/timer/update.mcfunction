@@ -5,3 +5,5 @@ execute if score OceanWaiting PHTimerManager = un number run function prophunt:t
 execute if score OceanGame PHTimerManager = un number run function prophunt:timer/ocean/game
 execute if score TempleWaiting PHTimerManager = un number run function prophunt:timer/temple/waiting
 execute if score TempleGame PHTimerManager = un number run function prophunt:timer/temple/game
+execute if score NetherWaiting PHTimerManager = un number run function prophunt:timer/nether/waiting
+execute if score NetherGame PHTimerManager = un number run function prophunt:timer/nether/game

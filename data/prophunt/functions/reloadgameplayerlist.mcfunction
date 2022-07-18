@@ -12,3 +12,6 @@ execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.3] run scoreboard players
 
 scoreboard players set PHTemple GamePlayerNumber 0
 execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.5] run scoreboard players add PHTemple GamePlayerNumber 1
+
+scoreboard players set PHNether GamePlayerNumber 0
+execute as @a[scores={Location=3,PHIsInGame=1},tag=PHG.2] run scoreboard players add PHNether GamePlayerNumber 1

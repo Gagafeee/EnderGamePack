@@ -14,6 +14,7 @@ scoreboard players set @s Location 0
 scoreboard players set @s Mode 0
 scoreboard players set @s Respawn 0
 scoreboard players set @s Allowpack 1
+scoreboard players set @s Linked 0
 #scoreboard players set @s SelectGameUI 0
 #scoreboard players set @s SelectGameUIQuit 0
 scoreboard players set @s SpawnEmrald 0

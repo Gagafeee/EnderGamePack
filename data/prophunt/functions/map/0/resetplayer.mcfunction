@@ -8,6 +8,7 @@ execute as @a[tag=PHFOUNDED] run tag @s remove PHFOUNDED
 execute as @a[tag=PHG.0,tag=finder] run tag @s remove finderwaiting
 execute as @a[tag=PHG.0,tag=finder] run clear @s carrot_on_a_stick
 execute as @a[tag=PHG.0,tag=!finder] run effect clear @s invisibility
+execute as @a[tag=PHG.0,tag=!finder] run effect clear @s slowness
 execute as @a[tag=PHG.0,tag=finder] run scoreboard players reset @s PHTry
 execute as @a[tag=PHG.0,tag=finder] run tag @s remove finder
 execute as @a[tag=PHG.0] run tag @s remove PHG.0

@@ -1,4 +1,5 @@
 ##Primary
+scoreboard objectives add Linked dummy
 scoreboard objectives add Dead minecraft.custom:minecraft.deaths
 scoreboard objectives add Location dummy
 scoreboard objectives add Respawn minecraft.custom:minecraft.leave_game
